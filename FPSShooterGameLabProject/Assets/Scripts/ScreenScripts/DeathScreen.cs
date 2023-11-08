@@ -7,6 +7,7 @@ public class DeathScreen : MonoBehaviour
 {
     public GameObject gameOverUI;
     public AudioSource deathsound;
+    public AudioSource stopsound;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class DeathScreen : MonoBehaviour
         Time.timeScale = 0f;
         gameOverUI.gameObject.SetActive(true);
         deathsound.Play();
+        stopsound.Stop();
     }
     public void restartLevel()
     {

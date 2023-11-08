@@ -10,6 +10,7 @@ public class TriggerNextLevel : MonoBehaviour
     public TextMeshProUGUI TextToActivate;
     public Image Key;
     public AudioSource playSound;
+    public AudioSource stopSound;
     public GameObject VictoryScreen;
 
 
@@ -30,6 +31,7 @@ public class TriggerNextLevel : MonoBehaviour
         {
             VictoryScreen.gameObject.SetActive(true);
             TextToActivate.gameObject.SetActive(false);
+            stopSound.Stop();
             playSound.Play();
             Time.timeScale = 0f;
         }

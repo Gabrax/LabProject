@@ -19,16 +19,17 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-            if(isPaused == true) 
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
         
+        
+        if(isPaused == true) 
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
+
         if (PauseMenuCanvas.activeInHierarchy)
         {
             Cursor.visible = true;
@@ -61,6 +62,13 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = false;
         }
             
+    }
+    public void ResumeGameButton()
+    {
+            PauseMenuCanvas.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+            Cursor.visible = false;
     }
     public void GoToMainMenu()
     {
