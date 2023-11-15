@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class ObjDestroyUponCollision : MonoBehaviour
 {
     public Image imageToActivate;
-    public GameObject Key;
+    public GameObject objtodestruct;
     public AudioSource playSound;
+    public TextMeshProUGUI TextToDeActivate;
     public TextMeshProUGUI TextToActivate;
 
 
@@ -33,12 +34,13 @@ public class ObjDestroyUponCollision : MonoBehaviour
             
             
             // Destroy the object that has collided with this script
-            Key.gameObject.SetActive(false);
+            objtodestruct.gameObject.SetActive(false);
             playSound.Play();
             Debug.Log("Collision");
             // Activate the image
             imageToActivate.gameObject.SetActive(true);
-            TextToActivate.gameObject.SetActive(false);
+            TextToActivate.gameObject.SetActive(true);
+            TextToDeActivate.gameObject.SetActive(false);
             
 
 

@@ -23,7 +23,7 @@ public class DeathScreen : MonoBehaviour
         if(gameOverUI.activeInHierarchy)
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
