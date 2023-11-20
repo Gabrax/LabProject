@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
     public Vector3 lastknownPosition { get => lastknowPosition; set => lastknowPosition = value; }
+    
 
     [Header("SightValues")]
     public float sightDistance = 20f;
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private string currentState;
     public Path path;
+    
     
 
 
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour
     {
         CanSeePlayer();
         currentState = m_Machine.activate.ToString();
+        
     }
 
     public bool CanSeePlayer()
@@ -60,10 +63,11 @@ public class Enemy : MonoBehaviour
                     if (Physics.Raycast(ray, out hitInfo, sightDistance))
                     {
                         
-                            if (hitInfo.transform.gameObject == player)
+                        if (hitInfo.transform.gameObject == player)
                             {
-                                Debug.DrawRay(ray.origin, ray.direction * sightDistance);
-                                return true;
+                            Debug.DrawRay(ray.origin, ray.direction * sightDistance);
+                            return true;
+                                
                             }
                         
                     }

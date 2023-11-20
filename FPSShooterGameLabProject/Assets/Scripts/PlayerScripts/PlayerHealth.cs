@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public DeathScreen death;
     public AudioSource hp;
     public AudioSource dmg;
+    public GameObject pauseDestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             
             death.GameOver();
+            Destroy(pauseDestroy);
             Debug.Log("Dead");
         }
     }

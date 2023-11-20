@@ -6,6 +6,7 @@ public class SearchState : BaseState
 {
     private float searchTimer;
     private float moveTimer;
+    
     public override void Enter()
     {
         enemy.Agent.SetDestination(enemy.lastknownPosition);
@@ -15,6 +16,7 @@ public class SearchState : BaseState
         if(enemy.CanSeePlayer())
         {
             stateMachine.ChangeState(new AttackState());
+            
         }
         if(enemy.Agent.remainingDistance < enemy.Agent.stoppingDistance)
         {

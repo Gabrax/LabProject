@@ -12,6 +12,7 @@ public class TriggerNextLevel : MonoBehaviour
     public AudioSource playSound;
     public AudioSource stopSound;
     public GameObject VictoryScreen;
+    public GameObject pauseDestroy;
 
 
     void Start()
@@ -31,6 +32,7 @@ public class TriggerNextLevel : MonoBehaviour
         {
             VictoryScreen.gameObject.SetActive(true);
             TextToActivate.gameObject.SetActive(false);
+            Destroy(pauseDestroy);
             stopSound.Stop();
             playSound.Play();
             Time.timeScale = 0f;

@@ -7,6 +7,8 @@ public class AttackState : BaseState
     private float moveTimer;
     private float losePlayertimer;
     private float shotTimer;
+    
+    
 
     public override void Enter()
     {
@@ -16,13 +18,13 @@ public class AttackState : BaseState
     {
         if (enemy.CanSeePlayer())
         {
-
+            
             losePlayertimer = 0;
             moveTimer += Time.deltaTime;
             shotTimer += Time.deltaTime;
             if(shotTimer > enemy.fireRate)
             {
-                Shoot();
+                Shoot();                
             }
             enemy.transform.LookAt(enemy.Player.transform);
             if (moveTimer > Random.Range(3,7))
@@ -45,7 +47,9 @@ public class AttackState : BaseState
     public void Shoot()
     {
         Transform gunbarrel = enemy.gunBarrel;
+        //instantiate new bullet
         GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet") as GameObject, gunbarrel.position, enemy.transform.rotation);
+        //calculate direction
         Vector3 shootDirection = (enemy.Player.transform.position - gunbarrel.transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(Random.Range(-3f,3f),Vector3.up) * shootDirection * 40;
         shotTimer = 0;
