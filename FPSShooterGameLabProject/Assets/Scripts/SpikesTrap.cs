@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikesTrap : PlayerHealth
+public class SpikesTrap : MonoBehaviour
 {
     [SerializeField] 
     private Animator animator;

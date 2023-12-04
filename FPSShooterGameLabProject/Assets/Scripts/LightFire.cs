@@ -15,6 +15,7 @@ public class LightFire : MonoBehaviour
     public int maxCapacity = 10;
     private int currentCapacity;
     public TextMeshProUGUI matchesText;
+    public AudioSource firesfx;
     
 
     // Start is called before the first frame update
@@ -55,11 +56,13 @@ public class LightFire : MonoBehaviour
                 firelight.enabled = true;
                 currentCapacity--;
                 particle.Play();
+                firesfx.Play();
             }
             else
             {
                 firelight.enabled = false;
                 particle.Stop(); // Do something when it's off
+                firesfx.Stop();
             }
         }
         
