@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
     private CharacterController characterController;
     private Vector3 playerVelocity;
@@ -42,6 +42,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.playerPosition = this.transform.position;
+    }
+
     public void ProcessMove(Vector2 input)
     {
         Vector3 moveDirection = Vector3.zero;
