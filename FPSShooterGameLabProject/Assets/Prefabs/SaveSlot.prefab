@@ -451,8 +451,6 @@ GameObject:
   - component: {fileID: 6387995696261756278}
   - component: {fileID: 5557171489619984406}
   - component: {fileID: 4553259261674513401}
-  - component: {fileID: 3109600365777902220}
-  - component: {fileID: 1691273039578919139}
   m_Layer: 0
   m_Name: SaveSlot
   m_TagString: Untagged
@@ -563,7 +561,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3109600365777902220}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -575,40 +573,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3109600365777902220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7801741620437295502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580be7bdd2dfa8a41b7bb8b60a0a8e53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Play: {fileID: 0}
-  Load: {fileID: 0}
-  Options: {fileID: 0}
-  Quit: {fileID: 0}
---- !u!114 &1691273039578919139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7801741620437295502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9184df3557fd8e844ab4565a1b71c94c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profileId: 
-  noDataContent: {fileID: 8201906844124310493}
-  hasDataContent: {fileID: 6573172398267870690}
-  percentageCompleteText: {fileID: 691692941817198000}
-  deathCountText: {fileID: 3259146133307093351}
-  clearButton: {fileID: 0}
 --- !u!1 &8201906844124310493
 GameObject:
   m_ObjectHideFlags: 0

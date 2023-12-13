@@ -6664,7 +6664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win !
+  m_text: Congrats !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3c1b674c6dc404408b59b6552d0605c, type: 2}
   m_sharedMaterial: {fileID: -3919182928648078991, guid: c3c1b674c6dc404408b59b6552d0605c, type: 2}
@@ -16225,6 +16225,9 @@ MonoBehaviour:
   gravity: -15
   jumpHeight: 1
   crouchTimer: 0
+  x: 0
+  y: 0
+  z: 0
 --- !u!114 &808553747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37100,8 +37103,12 @@ PrefabInstance:
       value: DataManager
       objectReference: {fileID: 0}
     - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
+      propertyPath: autoSaveTimeSeconds
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
       propertyPath: initializeDataIfNull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
       propertyPath: overrideSelectedProfileId

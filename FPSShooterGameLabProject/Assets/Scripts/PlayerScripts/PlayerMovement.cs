@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
     public float jumpHeight = 3f;
     private bool lerpCrouch, crouching, sprinting;
     public float crouchTimer;
+    public float x, y, z;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +46,15 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
+
         this.transform.position = data.playerPosition;
     }
 
     public void SaveData(GameData data)
     {
+
         data.playerPosition = this.transform.position;
+
     }
 
     public void ProcessMove(Vector2 input)
