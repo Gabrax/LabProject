@@ -8,14 +8,14 @@ public class SpikesTrap : MonoBehaviour
     private Animator animator;
     public AudioSource spikes;
     public AudioSource reversespikes;
-    // Start is called before the first frame update
+     
     void Start()
     {
         
     }
 
     
-    // Update is called once per frame
+     
     void Update()
     {
         

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class VictoryScreen : MonoBehaviour
 {
     public GameObject Victory;
-    // Start is called before the first frame update
+     
     void Start()
     {
         Time.timeScale = 1f;
@@ -14,7 +14,7 @@ public class VictoryScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         if (Victory.activeInHierarchy)
@@ -39,7 +39,7 @@ public class VictoryScreen : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("MainMenu");
     }
     public void QuitGame()
     {

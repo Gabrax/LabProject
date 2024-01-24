@@ -11,8 +11,8 @@ public class GameData
     public SerializableDictionary<string, bool> coinsCollected;
     
 
-    // the values defined in this constructor will be the default values
-    // the game starts with when there's no data to load
+     
+     
     public GameData() 
     {
         this.deathCount = 0;
@@ -23,7 +23,7 @@ public class GameData
 
     public int GetPercentageComplete() 
     {
-        // figure out how many coins we've collected
+         
         int totalCollected = 0;
         foreach (bool collected in coinsCollected.Values) 
         {
@@ -33,7 +33,7 @@ public class GameData
             }
         }
 
-        // ensure we don't divide by 0 when calculating the percentage
+         
         int percentageCompleted = -1;
         if (coinsCollected.Count != 0) 
         {

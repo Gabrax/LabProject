@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused;
     public GameObject PauseMenuCanvas;
     
-    // Start is called before the first frame update
+     
     void Start()
     {
         
@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         

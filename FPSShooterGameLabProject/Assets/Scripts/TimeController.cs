@@ -48,7 +48,7 @@ public class TimeController : MonoBehaviour
 
     private TimeSpan sunsetTime;
 
-    // Start is called before the first frame update
+     
     void Start()
     {
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(startHour);
@@ -57,7 +57,7 @@ public class TimeController : MonoBehaviour
         sunsetTime = TimeSpan.FromHours(sunsetHour);
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         UpdateTimeOfDay();

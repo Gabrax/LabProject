@@ -10,7 +10,7 @@ public class ObjRotation : MonoBehaviour
     private float speed;
 
 
-    // Update is called once per frame
+     
     void Update()
     {
         transform.Rotate(rotation * speed * Time.deltaTime);

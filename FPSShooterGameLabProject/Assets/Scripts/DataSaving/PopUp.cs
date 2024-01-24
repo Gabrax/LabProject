@@ -16,15 +16,15 @@ public class PopUp : Menu
     {
         this.gameObject.SetActive(true);
 
-        // set the display text
+         
         this.displayText.text = displayText;
 
-        // remove any existing listeners just to make sure there aren't any previous ones hanging around
-        // note - this only removes listeners added through code
+         
+         
         confirmButton.onClick.RemoveAllListeners();
         cancelButton.onClick.RemoveAllListeners();
 
-        // assign the onClick listeners
+         
         confirmButton.onClick.AddListener(() => {
             DeactivateMenu();
             confirmAction();

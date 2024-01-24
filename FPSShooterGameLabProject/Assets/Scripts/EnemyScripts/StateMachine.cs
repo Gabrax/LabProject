@@ -11,13 +11,13 @@ public class StateMachine : MonoBehaviour
     {
         ChangeState(new PatrolState());
     }
-    // Start is called before the first frame update
+     
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         if (activate != null) 

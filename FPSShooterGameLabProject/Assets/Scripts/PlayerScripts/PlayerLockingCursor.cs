@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CursorLock : MonoBehaviour
 {
-    // Set this variable to true to lock the cursor on scene load
+     
     public bool lockCursorOnLoad = true;
 
     void Start()
@@ -17,7 +17,7 @@ public class CursorLock : MonoBehaviour
 
     void Update()
     {
-        // You can use a key press to toggle cursor lock during gameplay
+         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Cursor.lockState == CursorLockMode.Locked)

@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
     private bool lerpCrouch, crouching, sprinting;
     public float crouchTimer;
     public float x, y, z;
-    // Start is called before the first frame update
+     
     void Start()
     {
         characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         isGrounded = characterController.isGrounded;
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         }
     }
 
-    //focusing and hiding the cursor in game
+     
     private void OnApplicationFocus(bool focus)
     {
         if(focus)
@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
             Cursor.lockState = CursorLockMode.None;
         }
     }
-    // hiding cursor on splash screen
+     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
     static void OnBeforeSplashScreen()
     {

@@ -8,7 +8,9 @@ public class DeathScreen : MonoBehaviour
     public GameObject gameOverUI;
     public AudioSource deathsound;
     public AudioSource stopsound;
-    // Start is called before the first frame update
+    public GameObject ak47;
+    public GameObject m16;
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -16,7 +18,7 @@ public class DeathScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         
@@ -38,6 +40,9 @@ public class DeathScreen : MonoBehaviour
         gameOverUI.gameObject.SetActive(true);
         deathsound.Play();
         stopsound.Stop();
+        Destroy(ak47);
+        Destroy(m16);
+        
     }
     public void restartLevel()
     {

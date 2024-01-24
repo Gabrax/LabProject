@@ -1,6 +1,6 @@
-// Per pixel bumped refraction.
-// Uses a normal map to distort the image behind, and
-// an additional texture to tint the color.
+ 
+ 
+ 
 
 Shader "FX/Glass/Stained BumpDistort" {
 Properties {
@@ -11,21 +11,21 @@ Properties {
 
 Category {
 
-	// We must be transparent, so other objects are drawn before this one.
+	 
 	Tags { "Queue"="Transparent" "RenderType"="Opaque" }
 
 
 	SubShader {
 
-		// This pass grabs the screen behind the object into a texture.
-		// We can access the result in the next pass as _GrabTexture
+		 
+		 
 		GrabPass {
 			Name "BASE"
 			Tags { "LightMode" = "Always" }
 		}
 		
-		// Main pass: Take the texture grabbed above and use the bumpmap to perturb it
-		// on to the screen
+		 
+		 
 		Pass {
 			Name "BASE"
 			Tags { "LightMode" = "Always" }
@@ -75,10 +75,10 @@ half4 frag (v2f i) : SV_Target
 	i.uvgrab.xy = TransformStereoScreenSpaceTex(i.uvgrab.xy, i.uvgrab.w);
 	#endif
 
-	// calculate perturbed coordinates
-	half2 bump = UnpackNormal(tex2D( _BumpMap, i.uvbump )).rg; // we could optimize this by just reading the x & y without reconstructing the Z
+	 
+	half2 bump = UnpackNormal(tex2D( _BumpMap, i.uvbump )).rg;  
 	float2 offset = bump * _BumpAmt * _GrabTexture_TexelSize.xy;
-	#ifdef UNITY_Z_0_FAR_FROM_CLIPSPACE //to handle recent standard asset package on older version of unity (before 5.5)
+	#ifdef UNITY_Z_0_FAR_FROM_CLIPSPACE  
 		i.uvgrab.xy = offset * UNITY_Z_0_FAR_FROM_CLIPSPACE(i.uvgrab.z) + i.uvgrab.xy;
 	#else
 		i.uvgrab.xy = offset * i.uvgrab.z + i.uvgrab.xy;
@@ -94,8 +94,8 @@ ENDCG
 		}
 	}
 
-	// ------------------------------------------------------------------
-	// Fallback for older cards and Unity non-Pro
+	 
+	 
 
 	SubShader {
 		Blend DstColor Zero

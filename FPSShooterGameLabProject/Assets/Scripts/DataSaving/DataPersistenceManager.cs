@@ -65,7 +65,7 @@ public class DataPersistenceManager : MonoBehaviour
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
 
-        // start up the auto saving coroutine
+         
         if (autoSaveCoroutine != null) 
         {
             StopCoroutine(autoSaveCoroutine);
@@ -75,19 +75,19 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void ChangeSelectedProfileId(string newProfileId) 
     {
-        // update the profile to use for saving and loading
+         
         this.selectedProfileId = newProfileId;
-        // load the game, which will use that profile, updating our game data accordingly
+         
         LoadGame();
     }
 
     public void DeleteProfileData(string profileId) 
     {
-        // delete the data for this profile id
+         
         dataHandler.Delete(profileId);
-        // initialize the selected profile id
+         
         InitializeSelectedProfileId();
-        // reload the game so that our data matches the newly selected profile id
+         
         LoadGame();
     }
 
@@ -108,29 +108,29 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        // return right away if data persistence is disabled
+         
         if (disableDataPersistence) 
         {
             return;
         }
 
-        // load any saved data from a file using the data handler
+         
         this.gameData = dataHandler.Load(selectedProfileId);
 
-        // start a new game if the data is null and we're configured to initialize data for debugging purposes
+         
         if (this.gameData == null && initializeDataIfNull) 
         {
             NewGame();
         }
 
-        // if no data can be loaded, don't continue
+         
         if (this.gameData == null) 
         {
             Debug.Log("No data was found. A New Game needs to be started before data can be loaded.");
             return;
         }
 
-        // push the loaded data to all other scripts that need it
+         
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects) 
         {
             dataPersistenceObj.LoadData(gameData);
@@ -139,29 +139,29 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        // return right away if data persistence is disabled
+         
         if (disableDataPersistence) 
         {
             return;
         }
 
-        // if we don't have any data to save, log a warning here
+         
         if (this.gameData == null) 
         {
             Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
             return;
         }
 
-        // pass the data to other scripts so they can update it
+         
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects) 
         {
             dataPersistenceObj.SaveData(gameData);
         }
 
-        // timestamp the data so we know when it was last saved
+         
         gameData.lastUpdated = System.DateTime.Now.ToBinary();
 
-        // save that data to a file using the data handler
+         
         dataHandler.Save(gameData, selectedProfileId);
     }
 
@@ -172,7 +172,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private List<IDataPersistence> FindAllDataPersistenceObjects() 
     {
-        // FindObjectsofType takes in an optional boolean to include inactive gameobjects
+         
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true)
             .OfType<IDataPersistence>();
 

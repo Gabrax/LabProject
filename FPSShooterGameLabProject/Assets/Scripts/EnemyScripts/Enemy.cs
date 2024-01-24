@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     
 
 
-    // Start is called before the first frame update
+     
     void Start()
     {
         m_Machine = GetComponent<StateMachine>();
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         CanSeePlayer();

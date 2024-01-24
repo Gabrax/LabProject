@@ -18,7 +18,7 @@ public class LightFire : MonoBehaviour
     public AudioSource firesfx;
     
 
-    // Start is called before the first frame update
+     
     void Start()
     {
         currentCapacity = maxCapacity;
@@ -26,7 +26,7 @@ public class LightFire : MonoBehaviour
         particle.Stop();
     }
 
-    // Update is called once per frame
+     
     void Update()
     {
         if (currentCapacity <= 0)
@@ -50,7 +50,7 @@ public class LightFire : MonoBehaviour
             isOn = !isOn;
             
 
-            // Perform specific behavior based on isOn
+             
             if (isOn)
             {
                 firelight.enabled = true;
@@ -61,7 +61,7 @@ public class LightFire : MonoBehaviour
             else
             {
                 firelight.enabled = false;
-                particle.Stop(); // Do something when it's off
+                particle.Stop();  
                 firesfx.Stop();
             }
         }

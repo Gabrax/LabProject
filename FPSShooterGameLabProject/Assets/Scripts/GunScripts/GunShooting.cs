@@ -34,7 +34,7 @@ public class GunShooting : MonoBehaviour
         currentAmmo = maxAmmo;
         magazineText.gameObject.SetActive(false);
     }
-    // Update is called once per frame
+     
     private void Update()
     {
         if (isReloading)
@@ -42,6 +42,12 @@ public class GunShooting : MonoBehaviour
             return;
         }
         if (currentAmmo <= 0)
+        {
+            AK47ReloadSound.Play();
+            StartCoroutine(Reload());
+            return;
+        }
+        if(Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
         {
             AK47ReloadSound.Play();
             StartCoroutine(Reload());

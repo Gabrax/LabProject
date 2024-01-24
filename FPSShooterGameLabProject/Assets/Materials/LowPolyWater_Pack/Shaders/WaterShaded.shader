@@ -19,7 +19,7 @@ Properties {
 CGINCLUDE 
 
 	#include "UnityCG.cginc" 
-	#include "UnityLightingCommon.cginc" // for _LightColor0
+	#include "UnityLightingCommon.cginc"  
 
 
 	sampler2D _ShoreTex;
@@ -114,17 +114,17 @@ CGINCLUDE
             float3 lightDirection;
             float attenuation;
  
-            if (0.0 == _WorldSpaceLightPos0.w) // directional light?
+            if (0.0 == _WorldSpaceLightPos0.w)  
             {
-               attenuation = 1.0; // no attenuation
+               attenuation = 1.0;  
                lightDirection = normalize(_WorldSpaceLightPos0.xyz);
             } 
-            else // point or spot light
+            else  
             {
                float3 vertexToLightSource = 
                   _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
                float distance = length(vertexToLightSource);
-               attenuation = 1.0 / distance; // linear attenuation 
+               attenuation = 1.0 / distance;  
                lightDirection = normalize(vertexToLightSource);
             }
  
@@ -137,10 +137,10 @@ CGINCLUDE
  
             float3 specularReflection;
             if (dot(normalDirection, lightDirection) < 0.0) 
-               // light source on the wrong side?
+                
             {
                specularReflection = float3(0.0, 0.0, 0.0); 
-                  // no specular reflection
+                   
             }
             else  
             {

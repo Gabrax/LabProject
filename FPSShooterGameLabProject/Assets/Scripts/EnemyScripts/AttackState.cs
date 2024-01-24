@@ -47,9 +47,9 @@ public class AttackState : BaseState
     public void Shoot()
     {
         Transform gunbarrel = enemy.gunBarrel;
-        //instantiate new bullet
+         
         GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet") as GameObject, gunbarrel.position, enemy.transform.rotation);
-        //calculate direction
+         
         Vector3 shootDirection = (enemy.Player.transform.position - gunbarrel.transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(Random.Range(-3f,3f),Vector3.up) * shootDirection * 40;
         shotTimer = 0;

@@ -11,6 +11,8 @@ public class TriggerNextLevel1 : MonoBehaviour
     public AudioSource stopSound;
     public GameObject VictoryScreen;
     public GameObject pauseDestroy;
+    public GameObject ak47;
+    public GameObject m16;
 
 
     void Start()
@@ -29,6 +31,8 @@ public class TriggerNextLevel1 : MonoBehaviour
             Debug.Log("Collision");
             VictoryScreen.gameObject.SetActive(true);
             Destroy(pauseDestroy);
+            ak47.gameObject.SetActive(false);
+            m16.gameObject.SetActive(false);
             stopSound.Stop();
             playSound.Play();
             Time.timeScale = 0f;

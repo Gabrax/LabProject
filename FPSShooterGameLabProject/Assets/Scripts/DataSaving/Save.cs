@@ -14,6 +14,9 @@ public class Save : MonoBehaviour
     [SerializeField] private GameObject hasDataContent;
     [SerializeField] private TextMeshProUGUI percentageCompleteText;
     [SerializeField] private TextMeshProUGUI deathCountText;
+    [SerializeField] public TextMeshProUGUI timerText;
+
+    
 
     [Header("Clear Data Button")]
     [SerializeField] private Button clearButton;
@@ -29,7 +32,7 @@ public class Save : MonoBehaviour
 
     public void SetData(GameData data) 
     {
-        // there's no data for this profileId
+         
         if (data == null) 
         {
             hasData = false;
@@ -37,7 +40,7 @@ public class Save : MonoBehaviour
             hasDataContent.SetActive(false);
             clearButton.gameObject.SetActive(false);
         }
-        // there is data for this profileId
+         
         else 
         {
             hasData = true;

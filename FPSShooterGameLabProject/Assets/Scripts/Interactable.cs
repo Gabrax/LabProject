@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public bool useEvents;
-    //message displayed to player when looking at an interactable.
+     
     [SerializeField]
     public string promptMessage;
 
@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
         return promptMessage;
     }
     
-    //this function will be called from our player.
+     
     public void BaseInteract()
     {
         if (useEvents) 
@@ -26,6 +26,6 @@ public class Interactable : MonoBehaviour
 
     protected virtual void Interact()
     {
-        // in this function will be overriden by subclasses
+         
     }
 }
