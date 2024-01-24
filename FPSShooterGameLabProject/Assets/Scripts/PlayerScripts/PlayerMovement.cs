@@ -46,14 +46,20 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
 
-        this.transform.position = data.playerPosition;
+        Physics.SyncTransforms();
+        
     }
 
     public void SaveData(GameData data)
     {
 
-        data.playerPosition = this.transform.position;
+        //data.playerPosition = this.transform.position;
+        PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+        PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+        PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
+
 
     }
 

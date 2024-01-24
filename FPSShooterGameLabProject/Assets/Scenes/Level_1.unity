@@ -16538,6 +16538,33 @@ MonoBehaviour:
   maxCapacity: 10
   matchesText: {fileID: 2030110577}
   firesfx: {fileID: 1799033960}
+--- !u!54 &808553803
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808553740}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &827471129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1142864672451224724, guid: 555f892913b6d9a41b5b01bfa52217e9, type: 3}
@@ -17675,7 +17702,6 @@ GameObject:
   m_Component:
   - component: {fileID: 994770883}
   - component: {fileID: 994770885}
-  - component: {fileID: 994770884}
   m_Layer: 0
   m_Name: OceanColl
   m_TagString: Untagged
@@ -17698,18 +17724,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 569430153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &994770884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994770882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d926d22db847640ad9e49bc4534a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &994770885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37020,7 +37034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577022315461609042, guid: ba23327b21fc23e47965da6abae5f2ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.97
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 5577022315461609042, guid: ba23327b21fc23e47965da6abae5f2ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37068,6 +37082,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1326199603}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2275882531793237343, guid: ba23327b21fc23e47965da6abae5f2ec, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 808553803}
     - targetCorrespondingSourceObject: {fileID: 2275882531793237343, guid: ba23327b21fc23e47965da6abae5f2ec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 808553769}
