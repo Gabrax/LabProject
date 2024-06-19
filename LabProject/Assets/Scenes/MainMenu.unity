@@ -2646,6 +2646,7 @@ MonoBehaviour:
   hasDataContent: {fileID: 1226171496}
   percentageCompleteText: {fileID: 8891933784004460945}
   deathCountText: {fileID: 8891933784004460944}
+  timerText: {fileID: 0}
   clearButton: {fileID: 570798215}
 --- !u!1 &1303454219
 GameObject:
@@ -3185,6 +3186,7 @@ MonoBehaviour:
   hasDataContent: {fileID: 371359899}
   percentageCompleteText: {fileID: 371359898}
   deathCountText: {fileID: 371359897}
+  timerText: {fileID: 0}
   clearButton: {fileID: 1717596088}
 --- !u!1 &1423255222
 GameObject:
@@ -4862,11 +4864,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
       propertyPath: initializeDataIfNull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
       propertyPath: testSelectedProfileId
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
+      propertyPath: disableDataPersistence
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546532776110088162, guid: 378c0853f2410db49bb55da195b7a396, type: 3}
       propertyPath: overrideSelectedProfileId
@@ -5465,6 +5471,7 @@ MonoBehaviour:
   hasDataContent: {fileID: 8891933784004460940}
   percentageCompleteText: {fileID: 8891933784004460945}
   deathCountText: {fileID: 8891933784004460944}
+  timerText: {fileID: 0}
   clearButton: {fileID: 1805023246}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
